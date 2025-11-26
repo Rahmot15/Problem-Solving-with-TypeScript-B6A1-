@@ -9,6 +9,10 @@ function formatValue(value: ValueType): ValueType {
   }
 }
 
+
+
+
+
 function getLength(value: string | any[]): number {
   if (typeof value === "string") {
     return value.length;
@@ -17,6 +21,10 @@ function getLength(value: string | any[]): number {
   }
   return 0;
 }
+
+
+
+
 
 class Person {
   name: string;
@@ -32,6 +40,10 @@ class Person {
   }
 }
 
+
+
+
+
 type Item = {
   title: string;
   rating: number;
@@ -39,6 +51,10 @@ type Item = {
 function filterByRating(items: Item[]): Item[] {
   return items.filter((item) => item.rating >= 4);
 }
+
+
+
+
 
 type User = {
   id: number;
@@ -49,6 +65,10 @@ type User = {
 function filterActiveUsers(users: User[]): User[] {
   return users.filter((user) => user.isActive === true);
 }
+
+
+
+
 
 interface Book {
   title: string;
@@ -63,6 +83,10 @@ function printBookDetails(books: Book): void {
     }, Available: ${books.isAvailable ? "Yes" : "No"}`
   );
 }
+
+
+
+
 
 function getUniqueValues(
   arr1: (number | string)[],
@@ -91,6 +115,10 @@ function getUniqueValues(
 
   return result;
 }
+
+
+
+
 
 type Product = {
   name: string;
