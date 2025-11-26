@@ -91,3 +91,23 @@ function getUniqueValues(
 
   return result;
 }
+
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+
+  return products.reduce((total, product) => {
+    let totalPrice = product.price * product.quantity;
+
+    let finalPrice = product.discount
+      ? totalPrice - (totalPrice * product.discount) / 100
+      : totalPrice;
+
+    return total + finalPrice;
+  }, 0);
+}
