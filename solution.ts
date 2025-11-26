@@ -49,3 +49,17 @@ type User = {
 function filterActiveUsers(users: User[]): User[] {
   return users.filter((user) => user.isActive === true);
 }
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+function printBookDetails(books: Book): void {
+  console.log(
+    `Title: ${books.title}, Author: ${books.author}, Published: ${
+      books.publishedYear
+    }, Available: ${books.isAvailable ? "Yes" : "No"}`
+  );
+}
