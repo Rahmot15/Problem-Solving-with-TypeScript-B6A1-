@@ -63,3 +63,31 @@ function printBookDetails(books: Book): void {
     }, Available: ${books.isAvailable ? "Yes" : "No"}`
   );
 }
+
+function getUniqueValues(
+  arr1: (number | string)[],
+  arr2: (number | string)[]
+): (number | string)[] {
+  let result: (number | string)[] = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(arr1[i]);
+  }
+
+  for (let i = 0; i < arr2.length; i++) {
+    let found = false;
+
+    for (let j = 0; j < result.length; j++) {
+      if (arr2[i] === result[j]) {
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      result.push(arr2[i]);
+    }
+  }
+
+  return result;
+}
